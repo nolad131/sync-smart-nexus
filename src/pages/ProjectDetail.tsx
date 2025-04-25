@@ -52,10 +52,10 @@ export const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center p-4">
         <Card className="w-full max-w-2xl">
           <CardContent className="p-6">
-            <h2 className="text-2xl font-bold mb-4">Project not found</h2>
+            <h2 className="text-xl sm:text-2xl font-bold mb-4">Project not found</h2>
             <Button asChild>
               <Link to="/">
                 <ArrowLeft className="mr-2" />
@@ -69,9 +69,9 @@ export const ProjectDetail = () => {
   }
 
   return (
-    <div className="min-h-screen py-20 px-4">
+    <div className="min-h-screen py-12 sm:py-20 px-4">
       <div className="container max-w-4xl mx-auto">
-        <Button asChild className="mb-8">
+        <Button asChild className="mb-6 sm:mb-8">
           <Link to="/">
             <ArrowLeft className="mr-2" />
             Back to Projects
@@ -79,26 +79,26 @@ export const ProjectDetail = () => {
         </Button>
         
         <Card className="mb-8">
-          <CardHeader>
-            <CardTitle className="text-3xl">{project.title}</CardTitle>
-            <CardDescription className="text-lg">{project.description}</CardDescription>
+          <CardHeader className="space-y-2">
+            <CardTitle className="text-2xl sm:text-3xl">{project.title}</CardTitle>
+            <CardDescription className="text-base sm:text-lg">{project.description}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-2 mb-6">
               {project.tech.map((tech) => (
-                <Badge key={tech} variant="secondary">{tech}</Badge>
+                <Badge key={tech} variant="secondary" className="text-xs sm:text-sm">{tech}</Badge>
               ))}
             </div>
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3">Overview</h3>
-                <p className="text-muted-foreground">{project.longDescription}</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-3">Overview</h3>
+                <p className="text-sm sm:text-base text-muted-foreground">{project.longDescription}</p>
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3">Key Features</h3>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3">Key Features</h3>
+                <ul className="list-disc list-inside space-y-2 text-sm sm:text-base text-muted-foreground">
                   {project.features.map((feature) => (
                     <li key={feature}>{feature}</li>
                   ))}
@@ -106,8 +106,8 @@ export const ProjectDetail = () => {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3">Technical Challenges</h3>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3">Technical Challenges</h3>
+                <ul className="list-disc list-inside space-y-2 text-sm sm:text-base text-muted-foreground">
                   {project.challenges.map((challenge) => (
                     <li key={challenge}>{challenge}</li>
                   ))}
@@ -115,8 +115,8 @@ export const ProjectDetail = () => {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3">Implementation</h3>
-                <p className="text-muted-foreground">{project.implementation}</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-3">Implementation</h3>
+                <p className="text-sm sm:text-base text-muted-foreground">{project.implementation}</p>
               </div>
             </div>
           </CardContent>
