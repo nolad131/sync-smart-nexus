@@ -1,3 +1,4 @@
+
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -39,24 +40,27 @@ export const Hero = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-wrap gap-4 justify-center pt-8"
         >
-          <Button 
-            className="text-lg px-8 relative overflow-hidden group" 
-            asChild
-            whileHover={{ scale: 1.05 }}
-          >
-            <a href="#projects">
-              View Projects
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </a>
-          </Button>
-          <Button 
-            variant="outline" 
-            className="text-lg px-8 hover:bg-secondary/10" 
-            asChild
-            whileHover={{ scale: 1.05 }}
-          >
-            <a href="#contact">Get in Touch</a>
-          </Button>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <Button 
+              className="text-lg px-8 relative overflow-hidden group" 
+              asChild
+            >
+              <a href="#projects">
+                View Projects
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+          </motion.div>
+          
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <Button 
+              variant="outline" 
+              className="text-lg px-8 hover:bg-secondary/10" 
+              asChild
+            >
+              <a href="#contact">Get in Touch</a>
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
 
