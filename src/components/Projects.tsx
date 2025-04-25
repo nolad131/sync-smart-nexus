@@ -1,9 +1,13 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
+    id: "smart-alarm",
     title: "Smart Alarm & Monitoring System",
     description: "IoT-based monitoring system with real-time alerts via MQTT and SMS",
     tech: ["Raspberry Pi", "MQTT", "SQLite", "React", "Ionic"],
@@ -15,6 +19,7 @@ const projects = [
     ]
   },
   {
+    id: "esp32-dashboard",
     title: "ESP32 Smart Dashboard",
     description: "LED Matrix display with Telegram integration and advanced power management",
     tech: ["ESP32", "Telegram API", "LED Matrix", "C++"],
@@ -45,11 +50,19 @@ export const Projects = () => {
                     <Badge key={tech} variant="secondary">{tech}</Badge>
                   ))}
                 </div>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  {project.features.map((feature) => (
-                    <li key={feature}>{feature}</li>
-                  ))}
-                </ul>
+                <div className="flex justify-between items-center">
+                  <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                    {project.features.slice(0, 2).map((feature) => (
+                      <li key={feature}>{feature}</li>
+                    ))}
+                  </ul>
+                  <Button asChild variant="outline">
+                    <Link to={`/project/${project.id}`}>
+                      View Details
+                      <ArrowRight className="ml-2" />
+                    </Link>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
