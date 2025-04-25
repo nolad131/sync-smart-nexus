@@ -1,4 +1,3 @@
-
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -6,21 +5,11 @@ import { motion } from "framer-motion";
 export const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-20 relative overflow-hidden">
-      {/* Background gradient circles with interactive movement */}
-      <motion.div 
-        className="absolute inset-0 overflow-hidden pointer-events-none"
-        animate={{ 
-          rotate: [0, 5, -5, 0],
-        }}
-        transition={{ 
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      >
+      {/* Removed the rotation animation on the background gradient */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 rounded-full blur-3xl" />
         <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-accent/20 via-secondary/20 to-primary/20 rounded-full blur-3xl" />
-      </motion.div>
+      </div>
       
       <div className="relative space-y-8 max-w-3xl">
         <motion.h1 
