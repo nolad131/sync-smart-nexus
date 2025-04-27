@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -7,48 +6,48 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 98%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 98%;
-    --popover-foreground: 222 47% 11%;
+    --background: 0 0% 97%;
+    --foreground: 220 25% 10%;
+    --card: 0 0% 97%;
+    --card-foreground: 220 25% 10%;
+    --popover: 0 0% 97%;
+    --popover-foreground: 220 25% 10%;
     --primary: 24 96% 53%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 261 84% 58%;
-    --secondary-foreground: 0 0% 98%;
-    --accent: 159 94% 43%;
-    --accent-foreground: 0 0% 98%;
-    --muted: 220 5% 96%;
-    --muted-foreground: 220 4% 46%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 222 47% 11%;
+    --primary-foreground: 0 0% 97%;
+    --secondary: 220 15% 40%;
+    --secondary-foreground: 0 0% 97%;
+    --accent: 220 15% 40%;
+    --accent-foreground: 0 0% 97%;
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 15% 45%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 97%;
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 220 25% 10%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 0 0% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 0 0% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 0 0% 98%;
+    --background: 220 25% 10%;
+    --foreground: 0 0% 97%;
+    --card: 220 25% 10%;
+    --card-foreground: 0 0% 97%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 0 0% 97%;
     --primary: 24 96% 53%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 261 84% 58%;
-    --secondary-foreground: 0 0% 98%;
-    --accent: 159 94% 43%;
-    --accent-foreground: 0 0% 98%;
-    --muted: 217 33% 18%;
-    --muted-foreground: 215 20% 65%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --ring: 224 71% 4%;
+    --primary-foreground: 0 0% 97%;
+    --secondary: 220 15% 80%;
+    --secondary-foreground: 220 25% 10%;
+    --accent: 220 15% 80%;
+    --accent-foreground: 220 25% 10%;
+    --muted: 220 25% 15%;
+    --muted-foreground: 220 15% 65%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 97%;
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 220 15% 80%;
   }
 
   * {
@@ -60,21 +59,21 @@
   }
 
   .card {
-    @apply border-2 rounded-xl shadow-sm transition-all duration-200;
+    @apply border-[1.5px] rounded-xl shadow-sm transition-all duration-200;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+    @apply text-primary;
   }
 }
 
 @layer components {
   .card-hover {
-    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl border-2;
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl border-[1.5px];
   }
   
   .nav-link {
-    @apply px-4 py-2 rounded-lg transition-colors hover:bg-muted border-2;
+    @apply px-4 py-2 rounded-lg transition-colors hover:bg-muted border-[1.5px];
   }
 
   .gradient-text {
@@ -88,6 +87,6 @@
 
 @layer utilities {
   .glass-effect {
-    @apply backdrop-blur-lg bg-opacity-10 bg-white border-2 border-opacity-20 border-white;
+    @apply backdrop-blur-lg bg-opacity-10 bg-white border-[1.5px] border-opacity-20 border-white;
   }
 }
